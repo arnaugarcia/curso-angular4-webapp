@@ -6,6 +6,7 @@ import {HomeComponent} from "./components/home.component";
 import {appRoutingProviders, routing} from "./app.routing";
 import {ErrorComponent} from "./components/error.component";
 import {ProductosListComponent} from "./components/productos-list.component";
+import {HttpModule} from "@angular/http";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {ProductosListComponent} from "./components/productos-list.component";
   ],
   imports: [
     BrowserModule,
-    routing
+    routing,
+    HttpModule
   ],
   providers: [
     appRoutingProviders
