@@ -7,13 +7,15 @@ import {appRoutingProviders, routing} from "./app.routing";
 import {ErrorComponent} from "./components/error.component";
 import {ProductosListComponent} from "./components/productos-list.component";
 import {HttpModule} from "@angular/http";
+import {ProductoAddComponent} from "./components/producto-add.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ErrorComponent,
-    ProductosListComponent
+    ProductosListComponent,
+    ProductoAddComponent
   ],
   imports: [
     BrowserModule,
