@@ -4,6 +4,7 @@
 import {ProductoService} from "../services/producto.service";
 import {Component} from "@angular/core";
 import {Producto} from "../models/producto";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'producto-add',
@@ -15,7 +16,11 @@ export class ProductoAddComponent{
     public titulo: string;
     public producto: Producto;
 
-    constructor(){
+    constructor(
+      private _productoService: ProductoService,
+      private _route: ActivatedRoute,
+      private _router: Router
+    ){
       this.titulo = 'Crear un nuevo producto';
       this.producto = new Producto('', '', '', '', '');
     }
@@ -24,7 +29,20 @@ export class ProductoAddComponent{
       console.log('producto-add.component cargado');
     }
 
-  onSubmit(){
+    onSubmit(){
       console.log(this.producto);
-  }
+      this._productoService.addProducto(this.producto).subscribe(
+          response => {
+              if (response.code == 200){
+                this._router.navigate(['productos']);
+              }else{
+                console.error(response);
+              }
+          },
+          error => {
+              console.error(<any> error);
+          }
+      );
+    }
+
 }
