@@ -45,7 +45,7 @@ export class ProductoDetailComponent{
         }
       );
     })
-    //this._productoService.getProducto()
+
   }
 
 }
