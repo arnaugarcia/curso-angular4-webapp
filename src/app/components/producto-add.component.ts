@@ -3,6 +3,7 @@
  */
 import {ProductoService} from "../services/producto.service";
 import {Component} from "@angular/core";
+import {Producto} from "../models/producto";
 
 @Component({
   selector: 'producto-add',
@@ -12,12 +13,18 @@ import {Component} from "@angular/core";
 
 export class ProductoAddComponent{
     public titulo: string;
+    public producto: Producto;
 
     constructor(){
-      this.titulo = 'Crear un nuevo producto'
+      this.titulo = 'Crear un nuevo producto';
+      this.producto = new Producto('', '', '', '', '');
     }
 
     ngOnInit(){
       console.log('producto-add.component cargado');
     }
+
+  onSubmit(){
+      console.log(this.producto);
+  }
 }
