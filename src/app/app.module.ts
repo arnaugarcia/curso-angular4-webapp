@@ -8,6 +8,7 @@ import {ErrorComponent} from "./components/error.component";
 import {ProductosListComponent} from "./components/productos-list.component";
 import {HttpModule} from "@angular/http";
 import {ProductoAddComponent} from "./components/producto-add.component";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {ProductoAddComponent} from "./components/producto-add.component";
   imports: [
     BrowserModule,
     routing,
-    HttpModule
+    HttpModule,
+    FormsModule
   ],
   providers: [
     appRoutingProviders
